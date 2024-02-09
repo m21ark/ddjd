@@ -5,7 +5,7 @@ using UnityEngine;
 public class checkIfGoal : MonoBehaviour
 {
 
-    public GameLogic gameLogic;
+    private GameLogic gameLogic;
     public bool isPlayer1 = false;
 
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class checkIfGoal : MonoBehaviour
         if(other.gameObject.tag == "Ball"){
             Debug.Log(isPlayer1? "Player 1 scored!" : "Player 2 scored!");
 
-            gameLogic.incrementScore(isPlayer1? 1: 2, 1);
+            gameLogic.incrementScore(isPlayer1? 1: 2, 5);
             gameLogic.respawnBall();
         }
     }

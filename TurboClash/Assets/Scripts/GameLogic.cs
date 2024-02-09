@@ -15,12 +15,8 @@ public class GameLogic : MonoBehaviour
 
     [ContextMenu("incrementScore")]
     public void incrementScore(int player, int amount){
-        if (player == 1){
-            score1 += amount;
-        }
-        else if (player == 2){
-            score2 += amount;
-        }
+        if (player == 1) score1 += amount;
+        else if (player == 2)  score2 += amount;
     }  
 
     [ContextMenu("respawnBall")]
