@@ -20,17 +20,32 @@ public class playerMovement : MonoBehaviour
     {
 
     // Speed
-    if (Input.GetKey(KeyCode.D) )
-        rb.velocity += new Vector3(speed, 0, 0);
+    if(gameObject.tag == "Player1"){
+        if (Input.GetKey(KeyCode.D) )
+            rb.velocity += new Vector3(speed, 0, 0);
 
-    if (Input.GetKey(KeyCode.A))
-        rb.velocity += new Vector3(-speed, 0, 0);
+        if (Input.GetKey(KeyCode.A))
+            rb.velocity += new Vector3(-speed, 0, 0);
 
-    if (Input.GetKey(KeyCode.W))
-        rb.velocity += new Vector3(0, 0, speed);
+        if (Input.GetKey(KeyCode.W))
+            rb.velocity += new Vector3(0, 0, speed);
 
-    if (Input.GetKey(KeyCode.S))
-        rb.velocity += new Vector3(0, 0, -speed);
+        if (Input.GetKey(KeyCode.S))
+            rb.velocity += new Vector3(0, 0, -speed);
+    }
+    else{
+        if (Input.GetKey(KeyCode.RightArrow) )
+            rb.velocity += new Vector3(speed, 0, 0);
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+            rb.velocity += new Vector3(-speed, 0, 0);
+
+        if (Input.GetKey(KeyCode.UpArrow))
+            rb.velocity += new Vector3(0, 0, speed);
+
+        if (Input.GetKey(KeyCode.DownArrow))
+            rb.velocity += new Vector3(0, 0, -speed);
+    }
 
     // Jump
     if (Input.GetKey(KeyCode.Space) && transform.position.y == 0.5f)
