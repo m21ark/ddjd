@@ -14,12 +14,25 @@ public class checkIfGoal : MonoBehaviour
         gameLogic = GameObject.Find("GameLogic").GetComponent<GameLogic>();
     }
 
-    void OnTriggerEnter(Collider other){
-        if(other.gameObject.tag == "Ball"){
-            Debug.Log(isPlayer1? "Player 1 scored!" : "Player 2 scored!");
+    void OnTriggerEnter(Collider other)
+    {
 
-            gameLogic.incrementScore(isPlayer1? 1: 2, 5);
+        if (other.gameObject.tag == "Ball")
+        {
+            float x = other.gameObject.transform.position.x;
+            Debug.Log("Ball position: " + x);
+            if (x > 0)
+            {
+                Debug.Log( "Player 2 scored!");
+                gameLogic.incrementScore(2, 5); 
+            }
+            else
+            {
+                Debug.Log( "Player 1 scored!");
+                gameLogic.incrementScore(1, 5); 
+            }
             gameLogic.respawnBall();
+
         }
     }
 }
