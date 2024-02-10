@@ -29,7 +29,7 @@ public class GameLogic : MonoBehaviour
     }
 
     private GameObject spawnBall(){
-       return Instantiate(ball, new Vector3(0, 0.5f, 0), Quaternion.identity);
+       return Instantiate(ball, new Vector3(-20.0f, 3.0f, 15.0f), Quaternion.identity);
     }
 
     // Start is called before the first frame update
