@@ -6,6 +6,8 @@ public class CoinCatch : MonoBehaviour
 {
 
     private GameLogic gameLogic;
+    public int stadiumWidth = 40;
+    public int stadiumLength = 70;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +30,11 @@ public class CoinCatch : MonoBehaviour
 
             Debug.Log(other.gameObject.tag == "Player1"? "Player 1 caught a coin!" : "Player 2 caught a coin!");
 
+            // get old objects Y
+            float oldY = transform.position.y;
+
             // Respawn the coin in a random position
-            Vector3 newPos = new Vector3(Random.Range(-40, 40), 1f, Random.Range(-70, 70));
+            Vector3 newPos = new Vector3(Random.Range(-stadiumWidth, stadiumWidth), oldY, Random.Range(-stadiumLength, stadiumLength));
             GameObject coin = Instantiate(gameObject, newPos, Quaternion.identity);;
             Destroy(gameObject);
         }
