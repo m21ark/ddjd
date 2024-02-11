@@ -50,26 +50,8 @@ public class playerMovement : MonoBehaviour
     }
 
     // Jump
-    if (Input.GetKey(KeyCode.Space)){
-
-        Debug.Log("SPACE BAR PRESSED!");
-
-        if(transform.position.y < 0.3f){
-                   Debug.Log("JUMPING!");
-
-            // make an upward impulse force
+    if (Input.GetKey(KeyCode.Space) && transform.position.y < 0.3f)
         rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
-        }else Debug.Log("CANT JUMP: " + transform.position.y.ToString());
-
-        
     }
-        
-
-    // Make camera follow
-    if(isPlayer1) makeCameraFollow();
-    }
-
-    void makeCameraFollow(){
-        Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z - 8);
-    }
+  
 }
