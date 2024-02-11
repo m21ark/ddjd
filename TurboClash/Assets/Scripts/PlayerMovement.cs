@@ -21,7 +21,7 @@ public class playerMovement : MonoBehaviour
 
     bool isPlayer1 = gameObject.tag == "Player1";
 
-    // Speed
+   /*  // Speed
     if(isPlayer1){
         if (Input.GetKey(KeyCode.D) )
             rb.velocity += new Vector3(speed, 0, 0);
@@ -48,7 +48,7 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow))
             rb.velocity += new Vector3(0, 0, -speed);
     }
-
+ */
     // Jump
     if (Input.GetKey(KeyCode.Space) && transform.position.y < 0.3f)
         rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
