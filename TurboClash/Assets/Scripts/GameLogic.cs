@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameLogic : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class GameLogic : MonoBehaviour
     public GameObject ball;
 
     public MenuController menuController;
+
+    public TextMeshProUGUI hud_score;
+    public TextMeshProUGUI hud_speed;
+    public TextMeshProUGUI hud_timer;
+
 
     [ContextMenu("incrementScore")]
     public void incrementScore(int player, int amount){
@@ -47,6 +53,21 @@ public class GameLogic : MonoBehaviour
         {
             menuController.TogglePauseGame();
         }
+
+        updateHUD();
+
+    }
+
+    void updateHUD(){
+        hud_score.text = score1 + " | " + score2;
+        int speed = (int) (player1.GetComponent<Rigidbody>().velocity.magnitude * 8.0f);
+        hud_speed.text =  speed.ToString() + "km/h";
+        
+        // Timer in the format MM:SS
+        float time = Time.time;
+        int minutes = Mathf.FloorToInt(time / 60F);
+        int seconds = Mathf.FloorToInt(time - minutes * 60);
+        hud_timer.text = string.Format("{0:0}:{1:00}", minutes, seconds);
     }
 
 }
