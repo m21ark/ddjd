@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveObstacle : MonoBehaviour
 {
+    public bool isFixed = true;
     public float speed = 1f;
     public float distance = 5f;
     public enum Direction { X, Y, Z }
@@ -21,7 +22,7 @@ public class MoveObstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move();
+        if(!isFixed) move();
     }
 
     private void move(){
