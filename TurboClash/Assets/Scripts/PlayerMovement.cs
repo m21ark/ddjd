@@ -52,6 +52,19 @@ public class playerMovement : MonoBehaviour
     // Jump
     if (Input.GetKey(KeyCode.Space) && transform.position.y < 0.3f)
         rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
+
+
+    // If the player is upside down, flip them back up
+    if (transform.rotation.eulerAngles.z > 90 && transform.rotation.eulerAngles.z < 270){
+        Debug.Log("Player is upside down");
+        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+        rb.angularVelocity = Vector3.zero;
     }
+
+
+    }
+
   
 }
+
+   
