@@ -13,6 +13,8 @@ public class GameLogic : MonoBehaviour
 
     public GameObject ball;
 
+    public MenuController menuController;
+
     [ContextMenu("incrementScore")]
     public void incrementScore(int player, int amount){
         if (player == 1) score1 += amount;
@@ -39,8 +41,12 @@ public class GameLogic : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update(){
+        // Check if ESC is pressed to pause Game
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            menuController.TogglePauseGame();
+        }
     }
+
 }
