@@ -5,7 +5,8 @@ using UnityEngine;
 public class PowerupCatch : MonoBehaviour
 {
 
-    public int type = 0; // 0 - turbo, 1 - super jump, 2 - super kick
+    public enum Type{ Turbo, SuperJump, SuperKick}
+    public Type type;
     public float duration = 5f;
     public int stadiumWidth = 13;
     public int stadiumLength = 8;
@@ -34,9 +35,9 @@ public class PowerupCatch : MonoBehaviour
 
         if(isPlayer1 || isPlayer2)
         {
-            if(type == 0) addTurbo(isPlayer1);
-            else if(type == 1) addSuperJump(isPlayer1);
-            else if (type == 2) addSuperKick(isPlayer1);
+            if(type == Type.Turbo) addTurbo(isPlayer1);
+            else if(type == Type.SuperJump) addSuperJump(isPlayer1);
+            else if (type == Type.SuperKick) addSuperKick(isPlayer1);
             else return; // invalid power-up type
             spawnNewPowerup();
         }
@@ -95,7 +96,7 @@ public class PowerupCatch : MonoBehaviour
         float newZ = Random.Range(-stadiumLength, stadiumLength);
         Vector3 newPos = new Vector3(newX, newY, newZ);
 
-        type = Random.Range(0, 3);
+        type = (Type)Random.Range(0, 3);
 
         GameObject powerup = Instantiate(gameObject, newPos, Quaternion.identity);
         Destroy(gameObject);
