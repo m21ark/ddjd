@@ -109,6 +109,9 @@ ScriptsOnlyBuild:
     methodName: GoToMenu
   - assembly: Assembly-CSharp
     fullTypeName: MenuController
+    methodName: GoToMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuController
     methodName: ResumeGame
   sceneClasses:
     Assets/Scenes/Game.unity:
@@ -147,37 +150,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16664}
     - Class: 114
-      Script: {instanceID: 17656}
+      Script: {instanceID: 16672}
     - Class: 114
-      Script: {instanceID: 17858}
+      Script: {instanceID: 17658}
     - Class: 114
-      Script: {instanceID: 18142}
+      Script: {instanceID: 17860}
     - Class: 114
-      Script: {instanceID: 19012}
+      Script: {instanceID: 18144}
     - Class: 114
-      Script: {instanceID: 19214}
+      Script: {instanceID: 19016}
     - Class: 114
-      Script: {instanceID: 19650}
+      Script: {instanceID: 19218}
     - Class: 114
-      Script: {instanceID: 20058}
+      Script: {instanceID: 19654}
     - Class: 114
-      Script: {instanceID: 20596}
+      Script: {instanceID: 20062}
     - Class: 114
-      Script: {instanceID: 20688}
+      Script: {instanceID: 20600}
     - Class: 114
-      Script: {instanceID: 20746}
+      Script: {instanceID: 20692}
     - Class: 114
-      Script: {instanceID: 21060}
+      Script: {instanceID: 20750}
     - Class: 114
-      Script: {instanceID: 21174}
+      Script: {instanceID: 21064}
     - Class: 114
-      Script: {instanceID: 22616}
+      Script: {instanceID: 21178}
     - Class: 114
-      Script: {instanceID: 22832}
+      Script: {instanceID: 21370}
     - Class: 114
-      Script: {instanceID: 22840}
+      Script: {instanceID: 22622}
     - Class: 114
-      Script: {instanceID: 266782}
+      Script: {instanceID: 22836}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -226,31 +229,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16664}
     - Class: 114
-      Script: {instanceID: 17240}
+      Script: {instanceID: 17242}
     - Class: 114
-      Script: {instanceID: 17656}
+      Script: {instanceID: 17658}
     - Class: 114
-      Script: {instanceID: 17858}
+      Script: {instanceID: 17860}
     - Class: 114
-      Script: {instanceID: 18142}
+      Script: {instanceID: 18144}
     - Class: 114
-      Script: {instanceID: 19012}
+      Script: {instanceID: 19016}
     - Class: 114
-      Script: {instanceID: 19120}
+      Script: {instanceID: 19124}
     - Class: 114
-      Script: {instanceID: 19370}
+      Script: {instanceID: 19374}
     - Class: 114
-      Script: {instanceID: 19988}
+      Script: {instanceID: 19992}
     - Class: 114
-      Script: {instanceID: 20058}
+      Script: {instanceID: 20062}
     - Class: 114
-      Script: {instanceID: 20596}
+      Script: {instanceID: 20600}
     - Class: 114
-      Script: {instanceID: 20746}
+      Script: {instanceID: 20750}
     - Class: 114
-      Script: {instanceID: 21060}
+      Script: {instanceID: 21064}
     - Class: 114
-      Script: {instanceID: 266782}
+      Script: {instanceID: 22836}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -280,6 +283,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 3fbb611e5e9a65ecb1687353fc3862fd
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PowerupCatch
   - hash:
       serializedVersion: 2
       Hash: f45600bcc886206dd55a3208474aad61
@@ -594,6 +603,12 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
+      Hash: ce0b31ee28f943d19e0146a213fa9065
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MoveObstacle
+  - hash:
+      serializedVersion: 2
       Hash: 4718916586b3818eb69bf65df61f0f3a
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -684,7 +699,7 @@ ScriptsOnlyBuild:
     className: UnityOnPointerClickMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 954c5d7464d53026f25398eea5b89c73
+      Hash: 4eaf6e146f48eff629dd9276854214ae
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameLogic
@@ -912,6 +927,12 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: 66dc89a62a249437e0ca875f58ba7fde
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: playerMovement
+  - hash:
+      serializedVersion: 2
       Hash: f669be52680c88846b2093fd41d1e06e
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1120,30 +1141,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 66dc89a62a249437e0ca875f58ba7fde
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: playerMovement
-  - hash:
-      serializedVersion: 2
-      Hash: ce0b31ee28f943d19e0146a213fa9065
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: MoveObstacle
-  - hash:
-      serializedVersion: 2
-      Hash: 3fbb611e5e9a65ecb1687353fc3862fd
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: PowerupCatch
-  - hash:
-      serializedVersion: 2
-      Hash: 1d51cd84b29b44da6882e7815a0a203f
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: TimeTicker
   - hash:
       serializedVersion: 2
       Hash: da3162afe6d6dcad966359ba4eb8e6a2
