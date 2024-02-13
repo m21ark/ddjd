@@ -8,6 +8,8 @@ public class checkIfGoal : MonoBehaviour
     private GameLogic gameLogic;
     public bool isPlayer1 = false;
 
+    public ParticleSystem goalExplosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,13 +26,17 @@ public class checkIfGoal : MonoBehaviour
             if (x > 0)
             {
                 Debug.Log( "Player 2 scored!");
-                gameLogic.incrementScore(2, 5); 
+                gameLogic.incrementScore(2, 5);
             }
             else
             {
                 Debug.Log( "Player 1 scored!");
                 gameLogic.incrementScore(1, 5); 
             }
+            // run the explosion on the position the ball has
+            goalExplosion.transform.position = other.gameObject.transform.position;
+            goalExplosion.Play();
+
             gameLogic.respawnBall();
 
         }
