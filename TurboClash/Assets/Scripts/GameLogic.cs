@@ -28,11 +28,20 @@ public class GameLogic : MonoBehaviour
     public GameObject hud;
 
 
+    // function that resets players position
+    [ContextMenu("resetPlayers")]
+    public void resetPlayers(){
+        player1.transform.position = new Vector3(10.0f, 2.0f, 0.0f);
+        player2.transform.position = new Vector3(-10.0f, 2.0f, 0.0f);
+    }
+   
 
     [ContextMenu("incrementScore")]
     public void incrementScore(int player, int amount){
         if (player == 1) score1 += amount;
         else if (player == 2)  score2 += amount;
+
+        resetPlayers();
     }  
 
     [ContextMenu("respawnBall")]
@@ -88,8 +97,8 @@ public class GameLogic : MonoBehaviour
         hud_speed.text =  speed.ToString() + "km/h";
         
         // Timer in the format MM:SS
-        int minutes = Mathf.FloorToInt((180 - gameTime) / 60F);
-        int seconds = Mathf.FloorToInt(180 - gameTime) % 60;
+        int minutes = Mathf.FloorToInt((180 - gameTime )/ 60F);
+        int seconds = Mathf.FloorToInt((180 - gameTime) - minutes * 60);
         hud_timer.text = string.Format("{0:0}:{1:00}", minutes, seconds);
     }
 
