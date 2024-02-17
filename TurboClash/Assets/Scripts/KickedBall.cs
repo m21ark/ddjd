@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerKickBall : MonoBehaviour
 {
     public int kickForce = 3; // force to kick the ball
+
+    public AudioSource kickSound;
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,9 @@ public class PlayerKickBall : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2"){
+
+            kickSound.Play();
+            
             // Get the ball and player's rigidbodies
             Rigidbody ball = GameObject.FindWithTag("Ball").GetComponent<Rigidbody>();
             Rigidbody player = collision.gameObject.GetComponent<Rigidbody>();

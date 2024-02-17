@@ -14,6 +14,8 @@ public class PowerupCatch : MonoBehaviour
     private GameObject player1;
     private GameObject player2;
 
+    public AudioSource powerupSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,8 @@ public class PowerupCatch : MonoBehaviour
 
         if(isPlayer1 || isPlayer2)
         {
+            powerupSound.Play();
+
             if(type == Type.Turbo) addTurbo(isPlayer1);
             else if(type == Type.SuperJump) addSuperJump(isPlayer1);
             else if (type == Type.SuperKick) addSuperKick(isPlayer1);

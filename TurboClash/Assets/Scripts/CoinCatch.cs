@@ -9,6 +9,8 @@ public class CoinCatch : MonoBehaviour
     public int stadiumWidth = 13;
     public int stadiumLength = 8;
 
+    public AudioSource coinSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class CoinCatch : MonoBehaviour
     {
         if(other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2")
         {
+
+            coinSound.Play();
            
             gameLogic.incrementScore(other.gameObject.tag == "Player1"? 1: 2, 1);
 

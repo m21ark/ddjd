@@ -10,6 +10,8 @@ public class checkIfGoal : MonoBehaviour
 
     public ParticleSystem goalExplosion;
 
+    public AudioSource goalSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +23,12 @@ public class checkIfGoal : MonoBehaviour
 
         if (other.gameObject.tag == "Ball")
         {
+
+            // goalSound.Play();
+
             float x = other.gameObject.transform.position.x;
             Debug.Log("Ball position: " + x);
+
             if (x > 0)
             {
                 Debug.Log( "Player 2 scored!");
@@ -33,6 +39,7 @@ public class checkIfGoal : MonoBehaviour
                 Debug.Log( "Player 1 scored!");
                 gameLogic.incrementScore(1, 5); 
             }
+
             // run the explosion on the position the ball has
             goalExplosion.transform.position = other.gameObject.transform.position;
             goalExplosion.Play();

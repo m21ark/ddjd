@@ -32,8 +32,18 @@ public class GameLogic : MonoBehaviour
     // function that resets players position
     [ContextMenu("resetPlayers")]
     public void resetPlayers(){
+
+        // reset players position
         player1.transform.position = new Vector3(10.0f, 2.0f, 0.0f);
         player2.transform.position = new Vector3(-10.0f, 2.0f, 0.0f);
+
+        // reset players velocity
+        player1.GetComponent<Rigidbody>().velocity = new Vector3(0.0f, 0.0f, 0.0f);
+        player2.GetComponent<Rigidbody>().velocity = new Vector3(0.0f, 0.0f, 0.0f);
+
+        // reset players rotation
+        player1.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+        player2.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
     }
    
 
@@ -42,7 +52,9 @@ public class GameLogic : MonoBehaviour
         if (player == 1) score1 += amount;
         else if (player == 2)  score2 += amount;
 
-        resetPlayers();
+        if(amount >  1)
+            resetPlayers();
+        // else its a coin
     }  
 
     [ContextMenu("respawnBall")]
