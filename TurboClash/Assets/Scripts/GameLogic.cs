@@ -42,8 +42,12 @@ public class GameLogic : MonoBehaviour
         player2.GetComponent<Rigidbody>().velocity = new Vector3(0.0f, 0.0f, 0.0f);
 
         // reset players rotation
-        player1.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-        player2.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+        player1.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
+        player2.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+
+        // reset angular velocity
+        player1.GetComponent<Rigidbody>().angularVelocity = new Vector3(0.0f, 0.0f, 0.0f);
+        player2.GetComponent<Rigidbody>().angularVelocity = new Vector3(0.0f, 0.0f, 0.0f);
     }
    
 
