@@ -763,9 +763,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.5
     y: 0
-    width: 1
+    width: 0.5
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -910,6 +910,7 @@ MonoBehaviour:
   rb: {fileID: 5925380904460150182}
   speed: 1
   jump: 8000
+  playerCamera: {fileID: 3744541212993388907}
 --- !u!65 &1705887583773214526
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -951,6 +952,8 @@ MonoBehaviour:
   FLTransform: {fileID: 4068537420919142915}
   BRTransform: {fileID: 1356008905452048090}
   BLTransform: {fileID: 2565017996340954603}
+  HorizontalAxisName: Horizontal 2
+  VerticalAxisName: Vertical 2
   acceleration: 500
   breakingForce: 300
   maxTurnAngle: 15

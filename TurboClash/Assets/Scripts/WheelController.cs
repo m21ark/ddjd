@@ -15,6 +15,9 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] Transform BRTransform;
     [SerializeField] Transform BLTransform;
 
+    [SerializeField] private string HorizontalAxisName;
+    [SerializeField] private string VerticalAxisName;
+
 
     public float acceleration = 500f;
     public float breakingForce = 300f;
@@ -28,8 +31,7 @@ public class NewBehaviourScript : MonoBehaviour
     private void FixedUpdate()
     {
 
-
-        currentAcceleration = acceleration * Input.GetAxis("Vertical");
+        currentAcceleration = acceleration * Input.GetAxis(VerticalAxisName);
 
         if (Input.GetKey(KeyCode.Space))
         {
@@ -49,7 +51,7 @@ public class NewBehaviourScript : MonoBehaviour
         BL.brakeTorque = currentBreakForce;
         BR.brakeTorque = currentBreakForce;
 
-        currentTurnAngle = maxTurnAngle * Input.GetAxis("Horizontal");
+        currentTurnAngle = maxTurnAngle * Input.GetAxis(HorizontalAxisName);
         FL.steerAngle = currentTurnAngle;
         FR.steerAngle = currentTurnAngle;
 

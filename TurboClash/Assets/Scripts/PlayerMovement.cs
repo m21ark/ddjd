@@ -8,6 +8,7 @@ public class playerMovement : MonoBehaviour
     public Rigidbody rb;
     public float speed = 1f;
     public float jump = 4f;
+    public Camera playerCamera;
 
     // Start is called before the first frame update
     void Start()
@@ -21,34 +22,6 @@ public class playerMovement : MonoBehaviour
 
     bool isPlayer1 = gameObject.tag == "Player1";
 
-   /*  // Speed
-    if(isPlayer1){
-        if (Input.GetKey(KeyCode.D) )
-            rb.velocity += new Vector3(speed, 0, 0);
-
-        if (Input.GetKey(KeyCode.A))
-            rb.velocity += new Vector3(-speed, 0, 0);
-
-        if (Input.GetKey(KeyCode.W))
-            rb.velocity += new Vector3(0, 0, speed);
-
-        if (Input.GetKey(KeyCode.S))
-            rb.velocity += new Vector3(0, 0, -speed);
-    }
-    else{
-        if (Input.GetKey(KeyCode.RightArrow) )
-            rb.velocity += new Vector3(speed, 0, 0);
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-            rb.velocity += new Vector3(-speed, 0, 0);
-
-        if (Input.GetKey(KeyCode.UpArrow))
-            rb.velocity += new Vector3(0, 0, speed);
-
-        if (Input.GetKey(KeyCode.DownArrow))
-            rb.velocity += new Vector3(0, 0, -speed);
-    }
- */
     // Jump
     if (Input.GetKey(KeyCode.Space) && transform.position.y < 0.3f)
         rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
@@ -62,6 +35,23 @@ public class playerMovement : MonoBehaviour
     }
 
 
+    }
+
+
+    public void Move(float inputHorizontal, float inputVertical){
+        // Get the forward and right vectors of the camera
+        Vector3 cameraForward = playerCamera.transform.forward;
+        Vector3 cameraRight = playerCamera.transform.right;
+
+        // Project the camera vectors onto the horizontal plane (Y = 0)
+        cameraForward.y = 0f;
+        cameraRight.y = 0f;
+        cameraForward.Normalize();
+        cameraRight.Normalize();
+
+        // Calculate the movement direction based on camera orientation
+        Vector3 moveDirection = cameraForward * inputVertical + cameraRight * inputHorizontal;
+        rb.velocity = moveDirection * speed;
     }
 
   
