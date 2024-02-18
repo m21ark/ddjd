@@ -22,10 +22,15 @@ public class playerMovement : MonoBehaviour
 
     bool isPlayer1 = gameObject.tag == "Player1";
 
-    // Jump
+    // Jump P1
     if (Input.GetKey(KeyCode.Space) && transform.position.y < 0.3f)
-        rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
+        if (isPlayer1)
+            rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
 
+    // Jump P2
+    if (Input.GetKey(KeyCode.Return) && transform.position.y < 0.3f)
+        if (!isPlayer1)
+            rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
 
     // If the player is upside down, flip them back up
     if (transform.rotation.eulerAngles.z > 90 && transform.rotation.eulerAngles.z < 270){
