@@ -21,7 +21,8 @@ public class GameLogic : MonoBehaviour
     public MenuController pauseMenuControl;
 
     public TextMeshProUGUI hud_score;
-    public TextMeshProUGUI hud_speed;
+    public TextMeshProUGUI hud_speed1;
+    public TextMeshProUGUI hud_speed2;
     public TextMeshProUGUI hud_timer;
 
     public TextMeshProUGUI endMenu_info;
@@ -110,8 +111,14 @@ public class GameLogic : MonoBehaviour
 
     void updateHUD(){
         hud_score.text = score1 + " | " + score2;
+
         int speed = (int) (player1.GetComponent<Rigidbody>().velocity.magnitude * 8.0f);
-        hud_speed.text =  speed.ToString() + "km/h";
+        hud_speed1.text =  speed.ToString() + "km/h";
+
+        if(hud_speed2 != null){
+            speed = (int) (player2.GetComponent<Rigidbody>().velocity.magnitude * 8.0f);
+            hud_speed2.text =  speed.ToString() + "km/h";
+        }
         
         // Timer in the format MM:SS
         int minutes = Mathf.FloorToInt((180 - gameTime )/ 60F);
