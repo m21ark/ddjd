@@ -2839,6 +2839,10 @@ PrefabInstance:
       propertyPath: HorizontalAxisName
       value: Horizontal 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3689108601142029770, guid: 4967444af92131d38b937d10e8ced419, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5836800631943562768, guid: 4967444af92131d38b937d10e8ced419, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10
@@ -2883,12 +2887,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3689108601142029770, guid: 4967444af92131d38b937d10e8ced419, type: 3}
     m_RemovedGameObjects:
     - {fileID: 7428967226295772285, guid: 4967444af92131d38b937d10e8ced419, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8400540854857415563, guid: 4967444af92131d38b937d10e8ced419, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1615401325}
   m_SourcePrefab: {fileID: 100100000, guid: 4967444af92131d38b937d10e8ced419, type: 3}
+--- !u!114 &1615401325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64825604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6439c83a03a9f3e6baea405c252486a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 6
+  rotationSpeed: 2
 --- !u!1 &1792959977
 GameObject:
   m_ObjectHideFlags: 0
