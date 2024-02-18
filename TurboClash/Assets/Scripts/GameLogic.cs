@@ -35,8 +35,8 @@ public class GameLogic : MonoBehaviour
     public void resetPlayers(){
 
         // reset players position
-        player1.transform.position = new Vector3(10.0f, 2.0f, 0.0f);
-        player2.transform.position = new Vector3(-10.0f, 2.0f, 0.0f);
+        player1.transform.position = new Vector3(10.0f, 0f, 0.0f);
+        player2.transform.position = new Vector3(-10.0f, 0f, 0.0f);
 
         // reset players velocity
         player1.GetComponent<Rigidbody>().velocity = new Vector3(0.0f, 0.0f, 0.0f);
