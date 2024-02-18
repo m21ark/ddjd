@@ -9,9 +9,15 @@ public class MenuController : MonoBehaviour
 
     public GameObject pauseCanvas;
     
-    public void StartGame()
+    public void StartGame_Single()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Game_SinglePlayer");
+        if(isGamePaused) ResumeGame();
+    }
+
+    public void StartGame_Multi()
+    {
+        SceneManager.LoadScene("Game_MultiPlayer");
         if(isGamePaused) ResumeGame();
     }
 
