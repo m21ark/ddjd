@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - CoinCatch
     - GameLogic
     - MenuController
+    - MoveObstacle
     - NewBehaviourScript
     - PlayerKickBall
     - PowerupCatch
@@ -31,6 +32,7 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.EventTrigger
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
@@ -73,7 +75,7 @@ ScriptsOnlyBuild:
   methodsToPreserve:
   - assembly: Assembly-CSharp
     fullTypeName: MenuController
-    methodName: StartGame
+    methodName: StartGame_Single
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -94,7 +96,7 @@ ScriptsOnlyBuild:
     methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: MenuController
-    methodName: StartGame
+    methodName: StartGame_Multi
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -113,8 +115,14 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: MenuController
     methodName: ResumeGame
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuController
+    methodName: GoToMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuController
+    methodName: ResumeGame
   sceneClasses:
-    Assets/Scenes/Game.unity:
+    Assets/Scenes/Game_MultiPlayer.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -141,6 +149,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
@@ -156,31 +168,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17860}
     - Class: 114
-      Script: {instanceID: 18144}
+      Script: {instanceID: 18020}
     - Class: 114
-      Script: {instanceID: 19016}
+      Script: {instanceID: 18146}
     - Class: 114
-      Script: {instanceID: 19218}
+      Script: {instanceID: 18964}
     - Class: 114
-      Script: {instanceID: 19654}
+      Script: {instanceID: 19020}
     - Class: 114
-      Script: {instanceID: 20062}
+      Script: {instanceID: 19222}
     - Class: 114
-      Script: {instanceID: 20600}
+      Script: {instanceID: 19658}
     - Class: 114
-      Script: {instanceID: 20692}
+      Script: {instanceID: 20066}
     - Class: 114
-      Script: {instanceID: 20750}
+      Script: {instanceID: 20604}
     - Class: 114
-      Script: {instanceID: 21064}
+      Script: {instanceID: 20696}
     - Class: 114
-      Script: {instanceID: 21178}
+      Script: {instanceID: 20754}
     - Class: 114
-      Script: {instanceID: 21370}
+      Script: {instanceID: 21068}
     - Class: 114
-      Script: {instanceID: 22622}
+      Script: {instanceID: 21182}
     - Class: 114
-      Script: {instanceID: 22836}
+      Script: {instanceID: 21374}
+    - Class: 114
+      Script: {instanceID: 21774}
+    - Class: 114
+      Script: {instanceID: 22626}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -189,11 +205,120 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 135
       Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
     - Class: 146
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Game_SinglePlayer.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 16664}
+    - Class: 114
+      Script: {instanceID: 16672}
+    - Class: 114
+      Script: {instanceID: 17658}
+    - Class: 114
+      Script: {instanceID: 17860}
+    - Class: 114
+      Script: {instanceID: 18020}
+    - Class: 114
+      Script: {instanceID: 18146}
+    - Class: 114
+      Script: {instanceID: 18964}
+    - Class: 114
+      Script: {instanceID: 19020}
+    - Class: 114
+      Script: {instanceID: 19222}
+    - Class: 114
+      Script: {instanceID: 19658}
+    - Class: 114
+      Script: {instanceID: 20066}
+    - Class: 114
+      Script: {instanceID: 20604}
+    - Class: 114
+      Script: {instanceID: 20696}
+    - Class: 114
+      Script: {instanceID: 20754}
+    - Class: 114
+      Script: {instanceID: 21068}
+    - Class: 114
+      Script: {instanceID: 21182}
+    - Class: 114
+      Script: {instanceID: 21374}
+    - Class: 114
+      Script: {instanceID: 21774}
+    - Class: 114
+      Script: {instanceID: 22626}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 134
+      Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 146
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -235,25 +360,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17860}
     - Class: 114
-      Script: {instanceID: 18144}
+      Script: {instanceID: 18020}
     - Class: 114
-      Script: {instanceID: 19016}
+      Script: {instanceID: 18146}
     - Class: 114
-      Script: {instanceID: 19124}
+      Script: {instanceID: 19020}
     - Class: 114
-      Script: {instanceID: 19374}
+      Script: {instanceID: 19128}
     - Class: 114
-      Script: {instanceID: 19992}
+      Script: {instanceID: 19378}
     - Class: 114
-      Script: {instanceID: 20062}
+      Script: {instanceID: 19996}
     - Class: 114
-      Script: {instanceID: 20600}
+      Script: {instanceID: 20066}
     - Class: 114
-      Script: {instanceID: 20750}
+      Script: {instanceID: 20604}
     - Class: 114
-      Script: {instanceID: 21064}
+      Script: {instanceID: 20754}
     - Class: 114
-      Script: {instanceID: 22836}
+      Script: {instanceID: 21068}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -285,7 +410,7 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
-      Hash: 3fbb611e5e9a65ecb1687353fc3862fd
+      Hash: ecf85ae690c077e5c0c6b10c90ac1fe2
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PowerupCatch
@@ -477,6 +602,12 @@ ScriptsOnlyBuild:
     className: UnityOnDropdownValueChangedMessageListener
   - hash:
       serializedVersion: 2
+      Hash: da3162afe6d6dcad966359ba4eb8e6a2
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MenuController
+  - hash:
+      serializedVersion: 2
       Hash: a1ac4c50e55874de16eee3db71aa9784
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -609,6 +740,12 @@ ScriptsOnlyBuild:
     className: MoveObstacle
   - hash:
       serializedVersion: 2
+      Hash: 5f1b01acabfb3b8331428a7593160b19
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Player
+  - hash:
+      serializedVersion: 2
       Hash: 4718916586b3818eb69bf65df61f0f3a
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -669,7 +806,7 @@ ScriptsOnlyBuild:
     className: DictionaryAsset
   - hash:
       serializedVersion: 2
-      Hash: 1b123f7d3f467ec3b47c3e853a553b5a
+      Hash: 2396762a23759f3a795aa2d1961ffc54
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: NewBehaviourScript
@@ -699,7 +836,7 @@ ScriptsOnlyBuild:
     className: UnityOnPointerClickMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 4eaf6e146f48eff629dd9276854214ae
+      Hash: 20893c9d3538318177d31e0246c3ba55
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameLogic
@@ -861,7 +998,7 @@ ScriptsOnlyBuild:
     className: AspectRatioFitter
   - hash:
       serializedVersion: 2
-      Hash: b62c3215b2f6c95ffa013f8f668915fd
+      Hash: e61c3a7e945425a3eda01b98d9dbb74e
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: checkIfGoal
@@ -915,7 +1052,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: f0ed685cd76ddbec8d015c8f98895276
+      Hash: dbeeefa3c995011a527cee1a689af60b
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerKickBall
@@ -927,7 +1064,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 66dc89a62a249437e0ca875f58ba7fde
+      Hash: 79c6b8ea91e256c95145b0d8d4a5584a
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: playerMovement
@@ -1101,7 +1238,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 5d0168a2b29db0db99bd9976c8c489ea
+      Hash: c9c5db57453288dba79665f545e1303a
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: CoinCatch
@@ -1141,14 +1278,9 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: da3162afe6d6dcad966359ba4eb8e6a2
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: MenuController
   platform: 24
   scenePathNames:
   - Assets/Scenes/Menu.unity
-  - Assets/Scenes/Game.unity
+  - Assets/Scenes/Game_MultiPlayer.unity
+  - Assets/Scenes/Game_SinglePlayer.unity
   playerPath: /home/m/Desktop/TurboClash.x86_64
