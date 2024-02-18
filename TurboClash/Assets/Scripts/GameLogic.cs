@@ -29,6 +29,8 @@ public class GameLogic : MonoBehaviour
     public GameObject endMenu;
     public GameObject hud;
 
+    public CenterInfoController centerInfoController;
+
 
     // function that resets players position
     [ContextMenu("resetPlayers")]
@@ -57,8 +59,11 @@ public class GameLogic : MonoBehaviour
         if (player == 1) score1 += amount;
         else if (player == 2)  score2 += amount;
 
-        if(amount >  1)
+        if(amount >  1){
             resetPlayers();
+            centerInfoController.goal(player);
+        }
+          
         // else its a coin
     }  
 
@@ -78,6 +83,7 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        centerInfoController.countdown();
         ball = spawnBall();
         Time.timeScale = 1;
         gameTime = 0.0f;
