@@ -12,10 +12,25 @@ public class playerMovement : MonoBehaviour
 
     private GameObject ball;
 
+    private bool isGrounded = true;
+    private bool canJump = true;
+
     // Start is called before the first frame update
     void Start()
     {
         ball = GameObject.FindGameObjectWithTag("Ball");
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //console.log collision
+        Debug.Log(collision.gameObject.name);
+
+        if (collision.gameObject.name == "MainStadiumArena")
+        {
+            isGrounded = true;
+            canJump = true;
+        }
     }
 
 
@@ -26,15 +41,24 @@ public class playerMovement : MonoBehaviour
         bool isPlayer1 = gameObject.tag == "Player1";
 
         // Jump P1
-        if (Input.GetKey(KeyCode.Space) && transform.position.y < 0.3f)
+        if (Input.GetKey(KeyCode.Space) && canJump && isGrounded)
             if (isPlayer1)
+            {
                 rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
+                isGrounded = false; // Car is no longer grounded after jumping
+                canJump = false; // Disable jumping until the car lands
+            }
 
         // Jump P2
-        if (Input.GetKey(KeyCode.Return) && transform.position.y < 0.3f)
+        if (Input.GetKey(KeyCode.Return) && canJump && isGrounded)
+        {
             if (!isPlayer1)
+            {
                 rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
-
+                isGrounded = false;
+                canJump = false;
+            }
+        }
         // If the player is upside down, flip them back up
         if (transform.rotation.eulerAngles.z > 90 && transform.rotation.eulerAngles.z < 270)
         {
