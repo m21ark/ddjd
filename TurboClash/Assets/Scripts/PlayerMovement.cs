@@ -61,21 +61,19 @@ public class playerMovement : MonoBehaviour
 
     void faceCamBall()
     {
-        float distanceBehindCar = 5f; 
-        float heightAboveCar = 2f; 
+        float distanceBehindCar = 4f;
+        float heightAboveCar = 1f;
 
         GameObject car = GameObject.FindGameObjectWithTag(gameObject.tag);
         GameObject ball = GameObject.FindGameObjectWithTag("Ball");
 
         if (car != null && ball != null)
         {
-            Vector3 desiredPosition = car.transform.position - car.transform.forward * distanceBehindCar + Vector3.up * heightAboveCar;
             Vector3 carToBallDirection = ball.transform.position - car.transform.position;
 
-            if (Vector3.Dot(car.transform.forward, carToBallDirection) < 0)
-            {
-                desiredPosition = car.transform.position + car.transform.forward * distanceBehindCar + Vector3.up * heightAboveCar;
-            }
+            float dot = Mathf.Clamp(Vector3.Dot(car.transform.forward, carToBallDirection), -1.2f, 1.2f);
+
+            Vector3 desiredPosition = car.transform.position - car.transform.forward * distanceBehindCar * dot + Vector3.up * heightAboveCar;
 
             Vector3 lookDirection = ball.transform.position - desiredPosition;
             Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
@@ -85,6 +83,33 @@ public class playerMovement : MonoBehaviour
 
         }
     }
+
+    // void faceCamBall() // ESTA SOLUÇAO FUNCIONA BEM
+    // {
+    //     float distanceBehindCar = 5f; 
+    //     float heightAboveCar = 2f; 
+
+    //     GameObject car = GameObject.FindGameObjectWithTag(gameObject.tag);
+    //     GameObject ball = GameObject.FindGameObjectWithTag("Ball");
+
+    //     if (car != null && ball != null)
+    //     {
+    //         Vector3 desiredPosition = car.transform.position - car.transform.forward * distanceBehindCar + Vector3.up * heightAboveCar;
+    //         Vector3 carToBallDirection = ball.transform.position - car.transform.position;
+
+    //         if (Vector3.Dot(car.transform.forward, carToBallDirection) < 0)
+    //         {
+    //             desiredPosition = car.transform.position + car.transform.forward * distanceBehindCar + Vector3.up * heightAboveCar;
+    //         }
+
+    //         Vector3 lookDirection = ball.transform.position - desiredPosition;
+    //         Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
+
+    //         playerCamera.transform.position = desiredPosition;
+    //         playerCamera.transform.rotation = targetRotation;
+
+    //     }
+    // }
 
 
 
