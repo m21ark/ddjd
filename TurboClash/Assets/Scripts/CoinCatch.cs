@@ -46,7 +46,7 @@ public class CoinCatch : MonoBehaviour
         float newZ = Random.Range(-stadiumLength, stadiumLength);
         Vector3 newPos = new Vector3(newX, newY, newZ);
 
-        GameObject coin = Instantiate(gameObject, newPos, Quaternion.identity);
+        GameObject coin = Instantiate(gameObject, newPos, Quaternion.Euler(90f, 0f, 0f));
         Destroy(gameObject);
     }
 }
