@@ -69,7 +69,7 @@ public class playerMovement : MonoBehaviour
 
 
 
-        faceCamBall();
+        // faceCamBall();
 
 
         /* //Cam update
