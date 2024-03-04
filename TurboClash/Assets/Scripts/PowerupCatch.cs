@@ -102,7 +102,11 @@ public class PowerupCatch : MonoBehaviour
 
         type = (Type)Random.Range(0, 3);
 
-        GameObject powerup = Instantiate(gameObject, newPos, Quaternion.identity);
+        // instantiate the new power-up
+        GameObject newPowerup = Instantiate(gameObject, newPos, Quaternion.identity);
+        newPowerup.GetComponent<PowerupCatch>().type = type;
+
+        // destroy the old power-up
         Destroy(gameObject);
     }
 }
