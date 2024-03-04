@@ -66,8 +66,6 @@ public class playerMovement : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
         }
 
-
-
         // faceCamBall();
 
 

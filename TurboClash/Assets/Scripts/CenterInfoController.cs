@@ -46,4 +46,9 @@ public class CenterInfoController : MonoBehaviour
         showInfo("Player " + player + " scored!");
         Invoke("countdown", 3.0f);
     }
+
+    public void ShowMessage(string message, float duration){
+        showInfo(message);
+        Invoke("hidePanel", duration);
+    }
 }

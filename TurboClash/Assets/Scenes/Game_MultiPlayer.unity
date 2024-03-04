@@ -1562,9 +1562,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 611893433822796180, guid: 1f9164454cc8de7bfafcbcbb86bce9bf, type: 3}
-      propertyPath: powerupSound
+      propertyPath: centerInfoController
       value: 
-      objectReference: {fileID: 1611186655}
+      objectReference: {fileID: 1771289717}
     - target: {fileID: 8464983594653559765, guid: 1f9164454cc8de7bfafcbcbb86bce9bf, type: 3}
       propertyPath: m_Name
       value: Powerup
@@ -7033,6 +7033,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 61709256231245585, guid: 2a107e1a12f4381a2a6c5f5d3c583984, type: 3}
+      propertyPath: acceleration
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 61709256231245585, guid: 2a107e1a12f4381a2a6c5f5d3c583984, type: 3}
+      propertyPath: maxTurnAngle
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3689108601142029770, guid: 2a107e1a12f4381a2a6c5f5d3c583984, type: 3}
       propertyPath: jump
       value: 7400
@@ -7494,11 +7502,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24135807841297a6e8e9d95f6599206c, type: 3}
---- !u!82 &1611186655 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4065421934434890638, guid: 1f9164454cc8de7bfafcbcbb86bce9bf, type: 3}
-  m_PrefabInstance: {fileID: 532646452}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1615401322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7507,6 +7510,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 61709256231245585, guid: 4967444af92131d38b937d10e8ced419, type: 3}
+      propertyPath: acceleration
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 61709256231245585, guid: 4967444af92131d38b937d10e8ced419, type: 3}
+      propertyPath: maxTurnAngle
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 61709256231245585, guid: 4967444af92131d38b937d10e8ced419, type: 3}
+      propertyPath: breakingForce
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 3689108601142029770, guid: 4967444af92131d38b937d10e8ced419, type: 3}
       propertyPath: jump
       value: 7400
