@@ -124,7 +124,7 @@ public class GameLogic : MonoBehaviour
     }
 
     void updateHUD(){
-        hud_score.text = score1 + " | " + score2;
+        hud_score.text = score1.ToString("D2") + " | " + score2.ToString("D2");
 
         int speed = (int) (player1.GetComponent<Rigidbody>().velocity.magnitude * 8.0f);
         hud_speed1.text =  speed.ToString() + "km/h";

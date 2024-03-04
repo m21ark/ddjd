@@ -20,7 +20,7 @@ public class NewBehaviourScript : MonoBehaviour
 
 
     public float acceleration = 500f;
-    public float breakingForce = 300f;
+    public float breakingForce = 800f;
     public float maxTurnAngle = 15f;
 
 
