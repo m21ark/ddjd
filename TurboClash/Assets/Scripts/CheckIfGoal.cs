@@ -40,11 +40,14 @@ public class checkIfGoal : MonoBehaviour
                 gameLogic.incrementScore(1, 5); 
             }
 
-            // run the explosion on the position the ball has
-            goalExplosion.transform.position = other.gameObject.transform.position;
-            goalExplosion.Play();
-
             gameLogic.respawnBall();
+
+            // run the explosion on the position the ball has
+            if(goalExplosion){
+                goalExplosion.transform.position = other.gameObject.transform.position;
+                goalExplosion.Play();
+            }
+            
 
         }
     }
