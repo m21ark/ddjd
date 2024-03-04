@@ -31,6 +31,11 @@ public class GameLogic : MonoBehaviour
 
     public CenterInfoController centerInfoController;
 
+    private bool canPlayersMove = false;
+
+    public void allowPlayersMovement(){
+        canPlayersMove = true;
+    }
 
     // function that resets players position
     [ContextMenu("resetPlayers")]
@@ -62,6 +67,8 @@ public class GameLogic : MonoBehaviour
         if(amount >  1){
             resetPlayers();
             centerInfoController.goal(player);
+            canPlayersMove = false;
+            Invoke("allowPlayersMovement", 6.0f);
         }
           
         // else its a coin
@@ -87,10 +94,14 @@ public class GameLogic : MonoBehaviour
         ball = spawnBall();
         Time.timeScale = 1;
         gameTime = 0.0f;
+        Invoke("allowPlayersMovement", 3.0f);
     }
 
     // Update is called once per frame
     void Update(){
+
+        if(!canPlayersMove)
+            resetPlayers();
 
         // Check if ESC is pressed to pause Game
         if (Input.GetKeyDown(KeyCode.Escape))

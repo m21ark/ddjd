@@ -44,5 +44,6 @@ public class CenterInfoController : MonoBehaviour
 
     public void goal(int player){
         showInfo("Player " + player + " scored!");
+        Invoke("countdown", 3.0f);
     }
 }
