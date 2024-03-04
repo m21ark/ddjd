@@ -10,6 +10,7 @@ ScriptsOnlyBuild:
     - PlayerKickBall
     - PowerupCatch
     - RotateCoin
+    - RotatePowerup
     - checkIfGoal
     - playerMovement
     Unity.PlasticSCM.Editor.dll:
@@ -205,6 +206,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 22792}
     - Class: 114
       Script: {instanceID: 22944}
+    - Class: 114
+      Script: {instanceID: 512650}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -310,6 +313,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 22792}
     - Class: 114
       Script: {instanceID: 22944}
+    - Class: 114
+      Script: {instanceID: 512650}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -426,7 +431,7 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
-      Hash: ecf85ae690c077e5c0c6b10c90ac1fe2
+      Hash: e033a7cfa425953501536c547a023695
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PowerupCatch
@@ -1534,6 +1539,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 6cc6173fc74e5859c81ea55edaac297a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: RotatePowerup
   platform: 24
   scenePathNames:
   - Assets/Scenes/Menu.unity
