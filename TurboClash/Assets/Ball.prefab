@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 89e776f8efbdb134587d8d2c2b81f90f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 46.8
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 89e776f8efbdb134587d8d2c2b81f90f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 46.8
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 89e776f8efbdb134587d8d2c2b81f90f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 46.8
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 89e776f8efbdb134587d8d2c2b81f90f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64,6 +64,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 89e776f8efbdb134587d8d2c2b81f90f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 381079b1d2217321eb34f818766b71df, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 89e776f8efbdb134587d8d2c2b81f90f, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 381079b1d2217321eb34f818766b71df, type: 2}
     - target: {fileID: 919132149155446097, guid: 89e776f8efbdb134587d8d2c2b81f90f, type: 3}
       propertyPath: m_Name
       value: Ball
@@ -113,7 +121,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.009796253
+  m_Radius: 1
   m_Center: {x: -0.000309187, y: 0.0000066477805, z: -0.00032504974}
 --- !u!54 &8997114272756260621
 Rigidbody:
