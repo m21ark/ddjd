@@ -27,17 +27,18 @@ public class checkIfGoal : MonoBehaviour
             // goalSound.Play();
 
             float x = other.gameObject.transform.position.x;
-            Debug.Log("Ball position: " + x);
+
+            Debug.Log("Ball score at " + x);
 
             if (x > 0)
             {
                 Debug.Log( "Player 2 scored!");
-                gameLogic.incrementScore(2, 5);
+                gameLogic.incrementScore(2, 3);
             }
             else
             {
                 Debug.Log( "Player 1 scored!");
-                gameLogic.incrementScore(1, 5); 
+                gameLogic.incrementScore(1, 3); 
             }
 
             gameLogic.respawnBall();

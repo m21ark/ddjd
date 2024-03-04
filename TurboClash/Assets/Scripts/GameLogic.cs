@@ -101,11 +101,15 @@ public class GameLogic : MonoBehaviour
 
         updateHUD();
 
-        if (score1 >= 10 || score2 >= 10 || gameTime >= 180) triggerEndOfGame();
+        if (score1 >= 20 || score2 >= 20 || gameTime >= 180) triggerEndOfGame();
 
 
         // check if the ball is out of bounds
         if(ball.transform.position.y < -10.0f) respawnBall();
+
+        // Check if players are out of bounds
+        if(player1.transform.position.y < -10.0f)
+            resetPlayers();
     }
 
     [ContextMenu("TriggerEndOfGame")]

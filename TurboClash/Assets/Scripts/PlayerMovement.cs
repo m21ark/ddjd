@@ -24,7 +24,6 @@ public class playerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //console.log collision
-        Debug.Log(collision.gameObject.name);
 
         if (collision.gameObject.name == "MainStadiumArena")
         {

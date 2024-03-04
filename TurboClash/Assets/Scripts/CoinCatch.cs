@@ -30,7 +30,7 @@ public class CoinCatch : MonoBehaviour
 
             coinSound.Play();
            
-            gameLogic.incrementScore(other.gameObject.tag == "Player1"? 1: 2, 1);
+            gameLogic.incrementScore(other.gameObject.tag == "Player1"? 1 : 2, 1);
 
             Debug.Log(other.gameObject.tag == "Player1"? "Player 1 caught a coin!" : "Player 2 caught a coin!");
             
