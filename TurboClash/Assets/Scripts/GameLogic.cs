@@ -112,7 +112,7 @@ public class GameLogic : MonoBehaviour
 
         updateHUD();
 
-        if (score1 >= 20 || score2 >= 20 || gameTime >= 180) triggerEndOfGame();
+        if ( score1 >= 20 || score2 >= 20 || gameTime >= 180) triggerEndOfGame();
 
 
         // check if the ball is out of bounds
@@ -131,7 +131,7 @@ public class GameLogic : MonoBehaviour
 
         string winner = (score1 > score2) ? "Player 1 wins" : "Player 2 wins";
         if (score1 == score2) winner = "It's a tie";
-        endMenu_info.text = winner + "\n" + score1 + " - " + score2 + "\nTime: " + hud_timer.text;
+        endMenu_info.text = winner + "\n" + score1.ToString("D2") + " - " + score2.ToString("D2") + "\nTime: " + hud_timer.text;
     }
 
     void updateHUD(){
