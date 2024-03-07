@@ -73,24 +73,13 @@ public class playerMovement : MonoBehaviour
         // Check if "C" key is pressed
         if (Input.GetKeyDown(KeyCode.C))
         {
-            // Toggle between cameras
             isCamera1Active = !isCamera1Active;
 
-            // Enable/disable cameras based on the toggle
             playerCamera.enabled = isCamera1Active;
             playerCameraFixed.enabled = !isCamera1Active;
         }
 
-        // Transition between cameras using Lerp
-        float transitionSpeed = 5f;
-        float cameraWeight = isCamera1Active ? 1f : 0f;
-        float fixedCameraWeight = 1f - cameraWeight;
-
-        //playerCamera.transform.position = Vector3.Lerp(playerCamera.transform.position, transform.position + cameraOffset, Time.deltaTime * transitionSpeed);
-        //playerCamera.transform.rotation = Quaternion.Lerp(playerCamera.transform.rotation, targetRotation, Time.deltaTime * transitionSpeed);
-        //playerCameraFixed.transform.position = Vector3.Lerp(playerCameraFixed.transform.position, transform.position + cameraOffset, Time.deltaTime * transitionSpeed);
-        //playerCameraFixed.transform.rotation = Quaternion.Lerp(playerCameraFixed.transform.rotation, targetRotation, Time.deltaTime * transitionSpeed);
-    
+        // Transition between cameras using Lerp ... to try
 
         if (isCamera1Active) {
             faceCamBall();
