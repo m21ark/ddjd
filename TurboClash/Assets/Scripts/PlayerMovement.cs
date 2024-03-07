@@ -9,6 +9,9 @@ public class playerMovement : MonoBehaviour
     public float speed = 1f;
     public float jump = 4f;
     public Camera playerCamera;
+    public Camera playerCameraFixed;
+
+    bool isCamera1Active = false;
 
     private GameObject ball;
 
@@ -66,9 +69,32 @@ public class playerMovement : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
         }
 
-        // faceCamBall();
         
+        // Check if "C" key is pressed
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            // Toggle between cameras
+            isCamera1Active = !isCamera1Active;
 
+            // Enable/disable cameras based on the toggle
+            playerCamera.enabled = isCamera1Active;
+            playerCameraFixed.enabled = !isCamera1Active;
+        }
+
+        // Transition between cameras using Lerp
+        float transitionSpeed = 5f;
+        float cameraWeight = isCamera1Active ? 1f : 0f;
+        float fixedCameraWeight = 1f - cameraWeight;
+
+        //playerCamera.transform.position = Vector3.Lerp(playerCamera.transform.position, transform.position + cameraOffset, Time.deltaTime * transitionSpeed);
+        //playerCamera.transform.rotation = Quaternion.Lerp(playerCamera.transform.rotation, targetRotation, Time.deltaTime * transitionSpeed);
+        //playerCameraFixed.transform.position = Vector3.Lerp(playerCameraFixed.transform.position, transform.position + cameraOffset, Time.deltaTime * transitionSpeed);
+        //playerCameraFixed.transform.rotation = Quaternion.Lerp(playerCameraFixed.transform.rotation, targetRotation, Time.deltaTime * transitionSpeed);
+    
+
+        if (isCamera1Active) {
+            faceCamBall();
+        }
 
         /* //Cam update
         ball = GameObject.FindGameObjectWithTag("Ball");
