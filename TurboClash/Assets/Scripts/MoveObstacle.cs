@@ -7,45 +7,27 @@ public class MoveObstacle : MonoBehaviour
     public bool isFixed = true;
     public float speed = 1f;
     public float distance = 5f;
-    public enum Direction { X, Y, Z }
-    public Direction direction;
 
-    private float currentSpeed;
-    private float currentPosition;
+    private float initialPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        initialPosition = transform.position.z;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!isFixed) move();
+        if (!isFixed) 
+        {
+            Move();
+        }
     }
 
-    private void move(){
-        if(direction == Direction.Z){
-            currentPosition = transform.position.z;
-            if(currentPosition > distance) currentSpeed = -speed;
-            else if(currentPosition < -distance) currentSpeed = speed;
-            
-            transform.position += new Vector3(0, 0, currentSpeed * Time.deltaTime);
-        }
-        else if(direction == Direction.X){
-            currentPosition = transform.position.x;
-            if(currentPosition > distance) currentSpeed = -speed;
-            else if(currentPosition < -distance) currentSpeed = speed;
-
-            transform.position += new Vector3(currentSpeed * Time.deltaTime, 0, 0);
-        }
-        else if(direction == Direction.Y){
-            currentPosition = transform.position.y;
-            if(currentPosition > distance) currentSpeed = -speed;
-            else if(currentPosition < -distance) currentSpeed = speed;
-            
-            transform.position += new Vector3(0, currentSpeed * Time.deltaTime, 0);
-        }
+    private void Move()
+    {
+        float newPositionZ = initialPosition + Mathf.PingPong(Time.time * speed, distance * 2) - distance;
+        transform.position = new Vector3(transform.position.x, transform.position.y, newPositionZ);
     }
 }
