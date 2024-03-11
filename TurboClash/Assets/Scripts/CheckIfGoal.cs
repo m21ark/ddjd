@@ -33,12 +33,12 @@ public class checkIfGoal : MonoBehaviour
             if (x > 0)
             {
                 Debug.Log( "Player 2 scored!");
-                gameLogic.incrementScore(2, 3);
+                gameLogic.incrementScore(2, 6);
             }
             else
             {
                 Debug.Log( "Player 1 scored!");
-                gameLogic.incrementScore(1, 3); 
+                gameLogic.incrementScore(1, 6); 
             }
 
             gameLogic.respawnBall();
